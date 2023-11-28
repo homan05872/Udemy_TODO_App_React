@@ -6,6 +6,24 @@ Github URL :
 [ https://github.com/homan05872/udemy_todo_app_API](https://github.com/homan05872/udemy_todo_app_API)
 
 
+## 起動手順
+
+- git cloen
+- .env準備
+
+    ```
+    APP_API_KEY=your_DRF_API_Token
+    ```
+- モジュールインストール
+
+    ```
+    npm intall
+    ```
+- 起動
+    ```
+    npm start
+    ```
+
 ---
 # Getting Started with Create React App
 
