@@ -1,3 +1,11 @@
+# Udemy Trainning TODOアプリ（React）
+
+### バックエンド Django Rest Framework
+
+[Github URL : https://github.com/homan05872/udemy_todo_app_API](https://github.com/homan05872/udemy_todo_app_API)
+
+
+---
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
