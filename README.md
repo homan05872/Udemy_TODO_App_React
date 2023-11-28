@@ -1,6 +1,6 @@
 # Udemy Trainning TODOアプリ（React）
 
-### バックエンド Django Rest Framework
+バックエンド: Django Rest Framework
 
 [Github URL : https://github.com/homan05872/udemy_todo_app_API](https://github.com/homan05872/udemy_todo_app_API)
 
