@@ -1,0 +1,19 @@
+
+
+ul.task-list li{
+  margin: 50px 50px;
+  font-size: 2rem;
+  background-color: rgb(240, 238, 236);
+  border: 2px solid gray;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.input-area{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}

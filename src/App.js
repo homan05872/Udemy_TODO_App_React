@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './static/App.css';
 import DrfApiFetch from './components/DrfApiFetch';
 
 
@@ -7,9 +7,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <DrfApiFetch/>
+        <div className='header-title'>
+          <img src={logo} className="App-logo" alt="logo" />
+          <h3 className='title-text'>TODOリスト</h3>
+        </div>
       </header>
+      <main>
+      <DrfApiFetch/>
+      </main>
+        
     </div>
   );
 }

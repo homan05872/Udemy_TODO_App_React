@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import '../static/DrfApiFetch.css'
 
 
 const DrfApiFetch = () => {
@@ -66,6 +67,9 @@ const DrfApiFetch = () => {
         })
   }
 
+  const cancelEditTask = () => {
+    setEditedTask({id:'', title:''});
+  }
   
 
   const handleInputChange = () => evt => {
@@ -76,34 +80,50 @@ const DrfApiFetch = () => {
 
   return (
     <div>
-        <ul>
+        <ul className='task-list'>
             {
-                tasks.map(task => <li key={task.id}> {task.title} {task.id}
-                <button onClick={()=>deleteTask(task.id)}>
-                    <i className='fas fa-trash-alt'></i>
-                </button>
+              tasks.map(task => <li key={task.id}><input className='done' type="checkbox" />{task.title} {task.id}
+              <div>
                 <button onClick={()=>setEditedTask(task)}>
                     <i className='fas fa-pen'></i>
                 </button>
-                </li>)
+                <button onClick={()=>deleteTask(task.id)}>
+                    <i className='fas fa-trash-alt'></i>
+                </button>
+              </div>
+              
+              </li>)
             }
         </ul>
-        Set id <br />
-        <input type="text" value={id} onChange={evt=>{(setId(evt.target.value))}} />
-        <br />
-        <button type='button' onClick={()=>{getTask()}}>Get Task</button>
-        <h3>{selectedTask.title} {selectedTask.id}</h3>
-        {/* <button type='button' onClick={()=>{deleteTask()}}>Delete Task</button> */}
 
-        <input type="text" name='title' 
-        value={editedTask.title}
-        onChange={handleInputChange()}
-        placeholder='New task ?'
-        required/>
-        { editedTask.id ?
-        <button onClick={()=>editTask(editedTask)}>Update</button>:
-        <button onClick={()=>newTask(editedTask)}>Create</button>
-        }
+        <div className='input-area'>
+          <p>idを入力してください。</p>
+          <input type="number" value={id} onChange={evt=>{(setId(evt.target.value))}} />
+          <br />
+          <button type='button' onClick={()=>{getTask()}}>Get Task</button>
+          <div className="get_task_area">
+            <h3>{selectedTask.title} {selectedTask.id}</h3>
+          </div>
+          {/* <button type='button' onClick={()=>{deleteTask()}}>Delete Task</button> */}
+            <div>
+              <input type="text" name='title' 
+              value={editedTask.title}
+              onChange={handleInputChange()}
+              placeholder='New task ?'
+              required/>
+              { editedTask.id ?
+              (
+              <>
+              <button onClick={()=>editTask(editedTask)}>Update</button>
+              <button onClick={()=>cancelEditTask()}>Cancel</button>
+              </> 
+              )
+              :
+              <button onClick={()=>newTask(editedTask)}>Create</button>
+              }
+            </div>
+          
+        </div>
     </div>
   )
 }
